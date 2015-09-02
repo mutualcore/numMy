@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Staple.create(name: "kosher salt")
+Staple.create(name: "salt")
+Staple.create(name: "coarse salt")
+Staple.create(name: "unsalted butter")
+Staple.create(name: "butter")
+Staple.create(name: "salted butter")
+Staple.create(name: "ground black pepper")
+Staple.create(name: "black pepper")
+Staple.create(name: "pepper")
+Staple.create(name: "all-purpose flour")
+Staple.create(name: "flour")
+Staple.create(name: "freshly ground pepper")
+Staple.create(name: "olive oil")
+Staple.create(name: "vegetable oil")
+Staple.create(name: "oil")
+Staple.create(name: "extra-virgin olive oil")
+Staple.create(name: "garlic")
+Staple.create(name: "seasoning")
+Staple.create(name: "sugar")
+Staple.create(name: "milk")
+
+puts "#{Staple.count} staples created"

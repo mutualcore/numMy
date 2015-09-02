@@ -1,0 +1,9 @@
+<div class="row">
+	<%= form_for Ingredient.new do |f| %>
+		<div class="input-group center">
+			<%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: 'Add ingredient' %>
+			<span class="input-group-btn">
+			<%= f.submit "Add", class: 'btn btn-success' %></span>
+		</div>
+	<% end %>
+</div>

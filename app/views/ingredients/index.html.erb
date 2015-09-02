@@ -1,0 +1,12 @@
+<div class="container">
+	<center>
+	<h2>My Kitchen</h2>
+	You have <span class="badge"><%= @ingredients.count %></span> ingredients!<br /><br />
+
+	<%= render 'form' %><br />
+
+	<% @ingredients.each do |i| %>
+		<div><%= i.name %> <%= link_to "", ingredient_path(i), method: :delete, class: 'glyphicon glyphicon-remove' %></div>
+	<% end %>
+	</center>
+</div>

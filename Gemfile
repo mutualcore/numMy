@@ -43,3 +43,6 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'figaro'
+gem 'unirest'
+gem 'bootstrap-sass'

@@ -1,0 +1,13 @@
+<div class="container">
+  <h3>Recipes</h3>
+  <% if @recipes["matches"].present? %>
+    <span class="badge"><%= @recipes.count %></span> recipes using your ingredients.<br /><br />
+    <% @recipes["matches"].each do |r| %>
+      <div>
+        <%= r["recipeName"] %>
+      </div>
+    <% end %>
+  <% else %>
+    <div>There are no recipes using <%= Ingredient.first.name %>!</div>
+  <% end %>
+</div> 
