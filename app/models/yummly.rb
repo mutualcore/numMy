@@ -1,7 +1,6 @@
 require 'unirest'
 
 class Yummly
-
 	def self.search(params = {})
     response = Unirest.get("http://api.yummly.com/v1/api/recipes", headers:
                           { "Accept" => "application/json" },
