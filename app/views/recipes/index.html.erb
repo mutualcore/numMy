@@ -1,10 +1,15 @@
 <div class="container">
-  <h3>Recipes</h3>
-  <% if @recipes["matches"].present? %>
-    <span class="badge"><%= @recipes.count %></span> recipes using your ingredients.<br /><br />
-    <% @recipes["matches"].each do |r| %>
-      <div>
-        <%= r["recipeName"] %>
+  <center><h2>Recipes</h2>
+  <% if @recipes.present? %>
+    <span class="badge"><%= @recipes.count %></span> recipes using your ingredients:<br />  
+    <%= @my_kitchen.join(', ') %> <br /><br />
+    <%= render 'ingredients/form' %></center><br />
+    <% @recipes.each do |r| %>
+      <div class="recipe">
+        <h5><%= r["recipeName"] %></h5>
+        <%= image_tag r["smallImageUrls"].join, width: '150' %>
+        <span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;<%= (r["totalTimeInSeconds"])/60 %> minutes<br />
+        <span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;<%= r["ingredients"].count %> ingredients
       </div>
     <% end %>
   <% else %>

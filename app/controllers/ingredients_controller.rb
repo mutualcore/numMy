@@ -6,7 +6,7 @@ class IngredientsController < ApplicationController
 	def create
 		@ingredient = Ingredient.new(ingredient_params)
 		if @ingredient.save
-			redirect_to ingredients_path
+			redirect_to :back
 		else
 			flash[:error] = "Error saving ingredient"
 		end

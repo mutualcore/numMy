@@ -45,4 +45,5 @@ end
 
 gem 'figaro'
 gem 'unirest'
+gem 'will_paginate'
 gem 'bootstrap-sass'
