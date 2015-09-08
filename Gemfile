@@ -46,4 +46,5 @@ end
 gem 'figaro'
 gem 'unirest'
 gem 'will_paginate'
+gem 'awesome_print'
 gem 'bootstrap-sass'

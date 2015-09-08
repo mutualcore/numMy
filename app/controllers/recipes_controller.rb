@@ -1,12 +1,23 @@
 class RecipesController < ApplicationController
   def index
-  	@my_kitchen = []
+  	@ingredients = []
   	Ingredient.all.each do |i|
-  		@my_kitchen << i[:name]
+  		@ingredients << i[:name]
   	end
   	@recipes = []
-   	@my_kitchen.each do |i|
-   		@recipes << Yummly.search(i)["matches"]
+   	@ingredients.each do |i|
+   		@recipes << Yummly.search(i)["matches"] unless @recipes.include?(Yummly.search(i)["matches"])
    	end
+   	staples = ["extra-virgin olive oil", "olive oil", "oil", "salt", "water", "pepper", "kosher salt", "ground black pepper", "milk", "butter", "salted butter", "unsalted butter", "sea salt", "honey", "sugar", "flour", "all-purpose flour", "skim milk", "basil", "brown sugar", "whole milk", "maple syrup"]
+   	@my_kitchen = (staples + @ingredients)
+   	@final = []
+   	@recipes.each do |r|
+   		r.each do |r|
+	   		if r["ingredients"].all? {|i| @my_kitchen.include?(i)}
+	   			@final << r
+	   		end
+	   	end
+   	end
+   	@final.uniq!
   end
 end
