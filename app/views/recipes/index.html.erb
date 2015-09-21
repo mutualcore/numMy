@@ -13,7 +13,7 @@
       </div>
     <% end %>
   <% else %>
-    There are no recipes using your ingredients!<br /><br />
+    There are no recipes using your ingredients! Add some more?<br /><br />
     <%= render 'ingredients/form' %><br />
     <% @ingredients.each do |i| %>
       <%= i.name %> <%= link_to "", recipes_path, method: :delete, class: 'glyphicon glyphicon-remove' %>

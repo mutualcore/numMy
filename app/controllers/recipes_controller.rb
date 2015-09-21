@@ -20,4 +20,8 @@ class RecipesController < ApplicationController
    	end
    	@final.uniq!
   end
+
+  def show
+    @recipe = Yummly.show(params[:id])
+  end
 end
