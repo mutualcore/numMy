@@ -1,0 +1,22 @@
+<div class="container">
+  <center><h2>Recipes</h2>
+  <% if @final.present? %>
+    <span class="badge"><%= @final.count %></span> recipes using your ingredients:<br />  
+    <%= @ingredients.join(', ') %><br /><br />
+    <%= render 'ingredients/form' %></center><br />
+    <% @final.each do |r| %>
+      <div class="recipe">
+        <h5><%= r["recipeName"] %></h5>
+        <%= image_tag r["smallImageUrls"].join, width: '140' %>
+        <% if !r["totalTimeInSeconds"].nil? %><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;<%= (r["totalTimeInSeconds"])/60 %> minutes<br /><% end %>
+        <span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;<%= r["ingredients"].count %> ingredients
+      </div>
+    <% end %>
+  <% else %>
+    There are no recipes using your ingredients! Add some more?<br /><br />
+    <%= render 'ingredients/form' %><br />
+    <% @ingredients.each do |i| %>
+      <%= i.name %> <%= link_to "", recipes_path, method: :delete, class: 'glyphicon glyphicon-remove' %>
+    <% end %><br /><br />
+  <% end %>
+</div> 

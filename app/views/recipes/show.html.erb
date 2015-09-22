@@ -1,0 +1,6 @@
+<div class="container">
+  <center><h2><%= @recipe.recipeName %></h2>
+  <%= image_tag r["smallImageUrls"].join, width: '140' %>
+  <% if !r["totalTimeInSeconds"].nil? %><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;<%= (r["totalTimeInSeconds"])/60 %> minutes<br /><% end %>
+  <span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;<%= r["ingredients"].count %> ingredients
+</div> 
